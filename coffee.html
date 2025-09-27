@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Cafe Menu</title>
+    <link rel="stylesheet" href="menu_styles.css"> </head>
+<body>
+
+    <header class="menu-header">
+        <h1>The Daily Grind</h1>
+        <p>Finely Crafted Coffee & Espresso Drinks</p>
+    </header>
+
+    <main class="menu-container">
+
+        <section class="menu-category espresso">
+            <h2 class="category-title">☕ Espresso Classics</h2>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Espresso Shot</h3>
+                    <p>A strong, concentrated shot of coffee.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Single &#8377; 70.00</span>
+                    <span class="price">Double &#8377; 120.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Americano</h3>
+                    <p>Espresso shots diluted with hot water for a lighter strength.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Small &#8377; 70.00</span>
+                    <span class="price">Large &#8377; 120.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Latte</h3>
+                    <p>Espresso with steamed milk and a thin layer of foam.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Small &#8377; 90.00</span>
+                    <span class="price">Large &#8377; 140.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Cappuccino</h3>
+                    <p>Equal parts espresso, steamed milk, and rich, frothy foam.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Small &#8377; 90.00</span>
+                    <span class="price">Large &#8377; 140.00</span>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="menu-category brewed-coffee">
+            <h2 class="category-title">💧 Brewed Coffee</h2>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>House Drip</h3>
+                    <p>Our perfectly balanced daily blend, brewed fresh.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Small &#8377; 90.00</span>
+                    <span class="price">Large &#8377; 140.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Pour Over</h3>
+                    <p>Single-origin bean, hand-poured to highlight unique flavors.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">One Size &#8377; 190.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Cold Brew</h3>
+                    <p>18-hour steep for a smooth, low-acidity, naturally sweet coffee.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">Small &#8377; 90.00</span>
+                    <span class="price">Large &#8377; 140.050</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="menu-category signature">
+            <h2 class="category-title">✨ Signature Specials</h2>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Honey Lavender Latte</h3>
+                    <p>A delicate blend of local honey, lavender syrup, and espresso.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">One Size &#8377; 190.00</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Spicy Mocha</h3>
+                    <p>Rich dark chocolate, cinnamon, a touch of cayenne, and espresso.</p>
+                </div>
+                <div class="item-prices">
+                    <span class="price">One Size &#8377; 190.00</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="menu-footer">
+        <p>&copy; 2025 Byter"s Cafe. All rights reserved.</p>
+    </footer>
+    <style>
+
+body {
+    font-family: 'Georgia', serif; 
+    background-color: #f7f3ed; 
+    color: #4a4a4a; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.menu-header {
+    background-color: #6f4e37; 
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.menu-header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.menu-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 3px solid #d4c0a5;
+}
+
+.category-title {
+    color: #cc6600; 
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.category-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #cc6600;
+    margin: 10px auto 0;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    border-bottom: 1px dashed #d4c0a5;
+    padding: 15px 0;
+}
+
+.menu-item:last-child {
+    border-bottom: none; 
+}
+
+.item-details {
+    flex-basis: 70%; 
+}
+
+.item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+    color: #6f4e37; 
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.item-prices {
+    flex-basis: 30%; 
+    text-align: right;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column; 
+}
+
+.price {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 2px;
+}
+
+
+.menu-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #6f4e37;
+    color: #fff;
+    font-size: 0.9em;
+}
+footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+@media (max-width: 600px) {
+    .menu-header h1 {
+        font-size: 2.5em;
+    }
+
+    .menu-container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+    
+    .menu-item {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .item-details {
+        flex-basis: 100%;
+        margin-bottom: 5px;
+    }
+
+    .item-prices {
+        flex-basis: 100%;
+        text-align: left; 
+        flex-direction: row; 
+        gap: 15px;
+    }
+}
+    </style>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Checkout</title>
+    <link rel="stylesheet" href="order.css"> </head>
+<body>
+
+    <header class="header">
+        <h1>Byter"s Cafe Order</h1>
+    </header>
+
+    <main class="checkout-container">
+        <section class="order-summary">
+            <h2>Order Summary 📋</h2>
+            <div class="item-list">
+                <div class="item">
+                    <span class="item-name"></span>
+                    <span class="item-price"></span>
+                </div>
+                <div class="item">
+                    <span class="item-name"></span>
+                    <span class="item-price"></span>
+                </div>
+                <div class="item">
+                    <span class="item-name"></span>
+                    <span class="item-price"></span>
+                </div>
+            </div>
+
+            <div class="totals">
+                <div class="total-row subtotal">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="total-row tax">
+                    <span>Tax (8%):</span>
+                    <span></span>
+                </div>
+                <div class="total-row grand-total">
+                    <h3>Grand Total:</h3>
+                    <h3></h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-method">
+            <h2>Payment Details 💳</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required maxlength="19">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group expiry">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" required maxlength="5">
+                    </div>
+                    
+                    <div class="form-group cvv">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="" required maxlength="3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentType">Payment Type</label>
+                    <select id="paymentType">
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="paypal">Google pay</option>
+                        <option value="credit">Phone pe</option>
+                        <option value="debit">BHIM</option>
+                        <option value="paypal">Apple pay</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="pay-button">Pay Now : </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Byter"s Cafe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

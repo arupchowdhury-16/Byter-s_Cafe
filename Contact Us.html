@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Byter's Cafe</title>
+    <link rel="stylesheet" href="contact_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Get In Touch With Byter"s Cafe</h1>
+            <p>We'd love to hear from you! Whether it's feedback, catering inquiries, or just a quick question.</p>
+        </div>
+    </header>
+
+    <main class="contact-container">
+
+        <section class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="POST" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject...</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="catering">Catering / Event Booking</option>
+                        
+                        <option value="order">Online Order Issue</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+        
+        <section class="info-section">
+            
+            <div class="info-card details">
+                <h2>Our Details</h2>
+                <p>📞 Phone: 877******9</p>
+                <p>📧 Email: <a href="byterscafe@gmail.con">byterscake@gmail.com</a></p>
+                <p>📍 Address: 101 Coffee Lane, Tech City, CA 90210</p>
+            </div>
+
+            <div class="info-card hours">
+                <h2>Business Hours</h2>
+                <ul>
+                    <li>Mon - Fri: 9:00 AM - 8:00 PM</li>
+                    <li>Saturday: 8:00 AM - 9:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+
+            <div class="info-card map-placeholder">
+                <h2>Find Us</h2>
+                <a href="https://www.google.com/maps/place/Lovely+Professional+University,+Jalandhar+-+Delhi,+Grand+Trunk+Rd,+Phagwara,+Punjab+144411/@31.2553921,75.7048678,17z/data=!4m6!3m5!1s0x391a5f5e9c489cf3:0x4049a5409d53c300!8m2!3d31.2553921!4d75.7048678!16s%2Fm%2F02wbfhd?utm_campaign=ml-ardi&g_ep=Eg1tbF8yMDI1MDkyNF8wIJvbDyoASAJQAQ%3D%3D">
+                    <img src="asset/map.jpg" alt="Map" height="300px">
+                </a>
+                
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Byter's Cafe. All rights reserved.</p>
+    </footer>
+    <style>
+        :root {
+            --primary-color: #4A2E2A; 
+            --secondary-color: #C0A99A; 
+            --accent-color: #D36D2A;
+            --text-dark: #333;
+            --text-light: #f9f9f9;
+            --bg-light: #fff;
+            --bg-grey: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-grey);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content h1 {
+            font-size: 3em;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .header-content p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        .contact-form-section {
+            flex: 2; 
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 1.1em;
+            font-weight: 700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .info-section {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card h2 {
+            margin-top: 0;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .info-card p, .info-card ul {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            padding: 5px 0;
+            border-bottom: 1px dashed var(--bg-grey);
+        }
+
+        .info-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .info-card a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .map-embed {
+            height: 250px;
+            background-color: var(--secondary-color);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: var(--primary-color);
+            opacity: 0.7;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cozy Corner Cafe - Feedback</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        
+        :root {
+            --color-cream: #FAF3E0;
+            --color-dark-coffee: #4A2C2A;
+            --color-medium-brown: #7B5C3D;
+            --color-text-dark: #2F1A1A;
+            --color-accent: #A87E5C;
+        }
+
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-text-dark);
+        }
+
+        
+        .rating .ph-star {
+            cursor: pointer;
+            transition: color 0.2s;
+            color: #ccc; 
+        }
+
+        .rating .ph-star.filled {
+            color: gold; 
+        }
+
+        .rating .ph-star:hover,
+        .rating .ph-star:hover ~ .ph-star {
+            color: gold;
+        }
+
+       
+        #feedback-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #feedback-list::-webkit-scrollbar-thumb {
+            background-color: var(--color-medium-brown);
+            border-radius: 4px;
+        }
+
+        #feedback-list::-webkit-scrollbar-track {
+            background-color: var(--color-cream);
+        }
+
+        
+        .container {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="container mx-auto p-4 md:p-8 flex flex-col items-center">
+
+        <header class="text-center py-6">
+            <h1 class="text-5xl font-extrabold text-[var(--color-dark-coffee)] mb-2">Leave Us a Note!</h1>
+            <p class="text-lg text-[var(--color-medium-brown)]">We'd love to hear about your experience at The Cozy Corner Cafe.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-7xl mt-4">
+
+            <div class="lg:col-span-1 p-6 bg-white shadow-2xl rounded-xl border border-[var(--color-accent)]/20">
+                <h2 class="text-2xl font-semibold mb-6 text-[var(--color-text-dark)]">Share Your Feedback</h2>
+
+                <form id="feedback-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-[var(--color-dark-coffee)] mb-1">Your Name (Optional)</label>
+                        <input type="text" id="name" name="name" placeholder="E.g., Coffee Lover"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition duration-150">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-[var(--color-dark-coffee)] mb-1">Service Rating</label>
+                        <div id="rating-stars" class="rating flex space-x-1 text-3xl">
+                            </div>
+                        <input type="hidden" id="rating" value="0">
+                    </div>
+
+                    <div>
+                        <label for="comment" class="block text-sm font-medium text-[var(--color-dark-coffee)] mb-1">Your Comments</label>
+                        <textarea id="comment" name="comment" required rows="4" placeholder="What did you enjoy? What could we improve?"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition duration-150 resize-none"></textarea>
+                    </div>
+                    
+                    <p id="error-message" class="text-sm text-red-500 hidden font-medium">Please select a rating and enter a comment.</p>
+
+                    <button type="submit" id="submit-button"
+                        class="w-full py-3 px-4 bg-[var(--color-medium-brown)] text-white font-bold rounded-lg hover:bg-[var(--color-dark-coffee)] transition duration-300 shadow-md disabled:opacity-50" disabled>
+                        Submit Feedback
+                    </button>
+                    <p id="loading-indicator" class="text-center text-[var(--color-medium-brown)] hidden">Submitting...</p>
+                </form>
+                
+                <p id="user-info" class="text-xs text-gray-500 mt-4 break-words">User ID: Loading...</p>
+            </div>
+
+            <div id="feedback-loading" class="text-center p-8 text-[var(--color-medium-brown)]">
+                <svg class="animate-spin h-6 w-6 mx-auto mb-2 text-[var(--color-medium-brown)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading latest reviews...
+            </div>
+            
+            <div id="feedback-list" class="lg:col-span-2 p-6 bg-white shadow-2xl rounded-xl border border-[var(--color-accent)]/20 overflow-y-auto max-h-[80vh] scrollbar-thin">
+                <div class="space-y-6">
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Byter"s Cafe. All rights reserved.</p>
+    </footer>
+    <style>
+       footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+    </style>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, push, onValue, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPbK2MD4k5x7XMGbZAucwo6b42hjziCLE",
+            authDomain: "proo-a5bea.firebaseapp.com",
+            databaseURL: "https://proo-a5bea-default-rtdb.firebaseio.com/",
+            projectId: "proo-a5bea",
+            storageBucket: "proo-a5bea.firebasestorage.app",
+            messagingSenderId: "542987700685",
+            appId: "1:542987700685:web:3daee518b48e00665b5c84"
+        };
+        
+        if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase(app);
+            const auth = getAuth(app);
+            const feedbackRef = ref(db, 'feedbacks');
+            
+            const feedbackForm = document.getElementById('feedback-form');
+            const nameInput = document.getElementById('name');
+            const ratingInput = document.getElementById('rating');
+            const commentInput = document.getElementById('comment');
+            const ratingStarsContainer = document.getElementById('rating-stars');
+            const submitButton = document.getElementById('submit-button');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const errorMessage = document.getElementById('error-message');
+            const feedbackList = document.getElementById('feedback-list');
+            const feedbackLoading = document.getElementById('feedback-loading');
+            
+            let currentRating = 0;
+            let userId = null;
+
+            signInAnonymously(auth).then((userCredential) => {
+                userId = userCredential.user.uid;
+                document.getElementById('user-info').textContent = `User ID: ${userId}`;
+                console.log("Signed in as anonymous user:", userId);
+            }).catch((error) => {
+                console.error("Anonymous sign-in failed:", error);
+                document.getElementById('user-info').textContent = 'User ID: N/A (Sign-in Error)';
+            });
+            
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement('i');
+                star.classList.add('ph-fill', 'ph-star');
+                star.setAttribute('data-rating', i);
+                ratingStarsContainer.appendChild(star);
+                
+                star.addEventListener('click', () => {
+                    currentRating = i;
+                    ratingInput.value = i;
+                    updateStars(i);
+                    if (commentInput.value.trim() !== "") {
+                        submitButton.disabled = false;
+                    }
+                });
+            }
+            
+            function updateStars(rating) {
+                const stars = ratingStarsContainer.querySelectorAll('.ph-star');
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('filled');
+                    } else {
+                        star.classList.remove('filled');
+                    }
+                });
+            }
+
+            onValue(feedbackRef, (snapshot) => {
+                const feedbacks = [];
+                snapshot.forEach((childSnapshot) => {
+                    feedbacks.push(childSnapshot.val());
+                });
+                displayFeedbacks(feedbacks.reverse());
+                feedbackLoading.classList.add('hidden');
+            }, {
+                onlyOnce: false
+            });
+
+            function displayFeedbacks(feedbacks) {
+                feedbackList.querySelector('.space-y-6').innerHTML = '';
+                
+                feedbacks.forEach(fb => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('feedback-item', 'p-4', 'bg-[var(--color-cream)]', 'rounded-lg', 'border', 'border-gray-200');
+                    
+                    const headerDiv = document.createElement('div');
+                    headerDiv.classList.add('flex', 'items-center', 'mb-2');
+                    
+                    const nameSpan = document.createElement('span');
+                    nameSpan.classList.add('font-semibold', 'text-lg', 'text-[var(--color-text-dark)]');
+                    nameSpan.textContent = fb.name || "Anonymous";
+                    
+                    const ratingDisplayDiv = document.createElement('div');
+                    ratingDisplayDiv.classList.add('rating-display', 'flex', 'ml-3', 'space-x-0.5', 'text-xl', 'text-yellow-400');
+                    for (let i = 0; i < fb.rating; i++) {
+                        const star = document.createElement('i');
+                        star.classList.add('ph-fill', 'ph-star');
+                        ratingDisplayDiv.appendChild(star);
+                    }
+                    
+                    headerDiv.appendChild(nameSpan);
+                    headerDiv.appendChild(ratingDisplayDiv);
+                    
+                    const commentP = document.createElement('p');
+                    commentP.classList.add('text-sm', 'text-gray-700');
+                    commentP.textContent = `"${fb.comment}"`;
+                    
+                    itemDiv.appendChild(headerDiv);
+                    itemDiv.appendChild(commentP);
+                    
+                    feedbackList.querySelector('.space-y-6').appendChild(itemDiv);
+                });
+            }
+
+            async function submitFeedback(event) {
+                event.preventDefault();
+                
+                const name = nameInput.value.trim() || 'Anonymous';
+                const comment = commentInput.value.trim();
+                
+                if (currentRating === 0 || comment === "") {
+                    errorMessage.classList.remove('hidden');
+                    return;
+                }
+                
+                errorMessage.classList.add('hidden');
+                submitButton.disabled = true;
+                loadingIndicator.classList.remove('hidden');
+                
+                const newFeedback = {
+                    name: name,
+                    rating: currentRating,
+                    comment: comment,
+                    timestamp: serverTimestamp(),
+                    userId: userId 
+                };
+                
+                try {
+                    await push(feedbackRef, newFeedback);
+                    nameInput.value = '';
+                    commentInput.value = '';
+                    currentRating = 0;
+                    ratingInput.value = '0';
+                    updateStars(0);
+                    
+                    alert("Thank you for your feedback!");
+                } catch (error) {
+                    console.error("Error submitting feedback: ", error);
+                    alert("Failed to submit feedback. Please try again.");
+                } finally {
+                    submitButton.disabled = false;
+                    loadingIndicator.classList.add('hidden');
+                }
+            }
+
+            feedbackForm.addEventListener('submit', submitFeedback);
+            
+            commentInput.addEventListener('input', () => {
+                if (commentInput.value.trim() !== "" && currentRating > 0) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+            
+            ratingStarsContainer.addEventListener('click', () => {
+                if (commentInput.value.trim() !== "" && currentRating > 0) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+
+
+        } else {
+            document.getElementById('feedback-loading').innerHTML = '<p class="text-red-500">Firebase configuration is missing. Cannot load or save data.</p>';
+            document.getElementById('submit-button').disabled = true;
+            document.getElementById('user-info').textContent = 'User ID: N/A (Config Error)';
+        }
+    </script>
+</body>
+</html>

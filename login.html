@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Byter's Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="cafe.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome to Byter's Cafe - Login</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">User ID</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your User ID">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="login-btn" id="login_data">Log In</button>
+        </form>
+        <p class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up here</a>
+        </p>
+    </div>
+   
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #4a2e1f;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #a68b75;
+    padding-bottom: 10px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5d4037; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #7b5e57; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(123, 94, 87, 0.3);
+}
+
+
+.login-btn {
+    background-color: #7b5e57;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.login-btn:hover {
+    background-color: #5d4037; 
+    transform: translateY(-1px);
+}
+
+.login-btn:active {
+    background-color: #4a2e1f;
+    transform: translateY(0);
+}
+
+.signup-link {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.signup-link a {
+    color: #a68b75; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #7b5e57;
+    text-decoration: underline;
+}
+
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+    </style>
+    <script src="indexx.js"></script>
+    </body>
+</html>

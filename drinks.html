@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Drinks Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Refreshing Cafe Menu</h1>
+        <p class="tagline">Cool off with our specialty drinks.</p>
+
+        <section class="menu-section">
+            <h2>🍹 Classic Mojitos</h2>
+            <div class="menu-item">
+                <span class="item-name">Classic Lime</span>
+                <span class="price">&#8377; 70.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Strawberry Mint</span>
+                <span class="price">&#8377; 90.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Passion Fruit</span>
+                <span class="price">&#8377; 90.50</span>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>🍦 Creamy Milkshakes</h2>
+            <div class="menu-item">
+                <span class="item-name">Vanilla Bean</span>
+                <span class="price">&#8377; 60.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chocolate Fudge</span>
+                <span class="price">&#8377; 70.50</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Salted Caramel Popcorn</span>
+                <span class="price">&#8377; 80.00</span>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>🥤 Soft Drinks & Juices</h2>
+            <div class="menu-item">
+                <span class="item-name">Canned Soda (Assorted)</span>
+                <span class="price">&#8377; 60.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Fresh Orange Juice</span>
+                <span class="price">&#8377; 50.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Sparkling Water</span>
+                <span class="price">&#8377; 40.00</span>
+            </div>
+        </section>
+
+    </div>
+    
+    <style>
+        body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f3e8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4a2c2a; 
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    text-align: center;
+    font-style: italic;
+    color: #8c7b6f;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #e0d9c4;
+    padding-bottom: 20px;
+}
+
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.menu-section h2 {
+    color: #5c8b8c; 
+    font-size: 1.8em;
+    border-bottom: 2px solid #5c8b8c;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.menu-item:last-child {
+    border-bottom: none; 
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #4a2c2a;
+    flex-grow: 1;
+}
+
+.price {
+    font-weight: bold;
+    color: #5c8b8c;
+    font-size: 1.1em;
+    padding-left: 15px; 
+}
+
+.description {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 0;
+    grid-column: 1 / 3; 
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+    </style>
+</body>
+</html>

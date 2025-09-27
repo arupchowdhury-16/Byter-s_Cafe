@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bites Menu - Byter's Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="cafe.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main class="menu-page-content">
+        <header class="menu-header">
+            <p class="menu-category-tag">OUR LUNCH & SNACKS</p>
+            <h1>Savory Bites Menu 🥪</h1>
+            <div class="header-separator"></div>
+            <p class="menu-intro">
+                Take a break from the sweet treats! Explore our selection of satisfying sandwiches, warm tarts, and hearty snacks perfect for any time of day.
+            </p>
+        </header>
+
+        <section class="menu-grid savory-bites-grid">
+            
+            <div class="menu-item">
+                <img src="savory_sandwich.jpg" alt="The Bit-Bucket Sandwich" class="item-img">
+                <div class="item-details">
+                    <h3 class="item-name">The Bit-Bucket Sandwich</h3>
+                    <p class="item-description">Roasted chicken, pesto, sun-dried tomatoes, and fresh mozzarella on artisan sourdough.</p>
+                    <p class="item-price">$8.99</p>
+                    <button class="add-to-cart-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="savory_quiche.jpg" alt="Data Quiche" class="item-img">
+                <div class="item-details">
+                    <h3 class="item-name">The Data Quiche (V)</h3>
+                    <p class="item-description">Flaky crust with spinach, feta cheese, and caramelized onions. Served warm.</p>
+                    <p class="item-price">$6.50</p>
+                    <button class="add-to-cart-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="savory_roll.jpg" alt="Server Sausage Roll" class="item-img">
+                <div class="item-details">
+                    <h3 class="item-name">Server Sausage Roll</h3>
+                    <p class="item-description">Premium pork sausage wrapped in golden, buttery puff pastry. A classic quick bite.</p>
+                    <p class="item-price">$4.75</p>
+                    <button class="add-to-cart-btn">Add to Order</button>
+                </div>
+            </div>
+            
+             <div class="menu-item">
+                <img src="savory_soup.jpg" alt="Conditional Soup" class="item-img">
+                <div class="item-details">
+                    <h3 class="item-name">Conditional Soup (Seasonal)</h3>
+                    <p class="item-description">Ask your barista for today's hearty and comforting soup special. Served with toast.</p>
+                    <p class="item-price">$5.99</p>
+                    <button class="add-to-cart-btn">Add to Order</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <style>
+:root {
+    --primary-color: #5d4037;
+    --accent-color: #7b5e57; 
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-creamy: #f8f7f4;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--bg-creamy);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-category-tag {
+    color: #a68b75; 
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.menu-header h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.header-separator {
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 15px auto 20px auto;
+    border-radius: 5px;
+}
+
+.menu-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: #666;
+}
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.item-img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+}
+
+.item-details {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    color: #4a2e1f;
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.item-description {
+    color: #777;
+    font-size: 1em;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.item-price {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--primary-color);
+}
+
+
+
+@media (max-width: 768px) {
+    .menu-header h1 {
+        font-size: 2.5em;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .item-img {
+        height: 200px;
+    }
+}
+    </style>
+
+    </body>
+</html>
