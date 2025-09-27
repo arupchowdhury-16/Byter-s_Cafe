@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byter"s Cafe.in</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="shortcut icon" href="cafe.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head>
+
+<body>
+    <nav id="cafe-nav">
+        <div class="container">
+            <div class="nav-content">
+
+                <div class="logo-area">
+                    <a href="index.html" class="brand-link">
+                        <img src="byters.jpg" height="70" style="border-radius: 50%;">
+                        Byter"s <span class="cafe-accent"> Cafe</span>
+                    </a>
+                </div>
+
+                <div id="desktop-links" class="desktop-nav">
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="coffee.html" class="dropdown-link">Coffee & Espresso</a>
+                            <a href="drinks.html" class="dropdown-link">Drinks</a>
+                            <a href="cake.html">Pastries & Baked Item</a>
+                            <a href="http://127.0.0.1:5500/savory%20bites.html">Savory Bites</a>
+                        </div>
+                    </div>
+                    <a href="about_us.html" class="nav-link">About Us</a>
+                    <a href="Contact Us.html" class="nav-link">Contact Us</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="Order.html" class="cta-button">Order Now</a>
+                    <div class="auth-buttons">
+                        <a href="login.html" class="auth-link">Login</a>
+                        <a href="signup.html" class="auth-link">Sign Up</a>
+                    </div>
+                    <a href="#" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Welcome to Byter"s Cafe ☕</h1>
+        </header>
+
+        <section class="specialties-section">
+            <div class="top-specialties-header">
+                <p class="what-we-do">What we do</p>
+                <h2 class="our-specialties">Our Specialties</h2>
+                <div class="separator-line"></div>
+                <p class="intro-text">
+                    Discover the heart of Byter"s Cafe—where every item is crafted with passion and the finest ingredients.
+                </p>
+            </div>
+
+            <div class="specialty-grid">
+                <div class="specialty-item">
+                    <div class="specialty-icon-container" >
+                        <img src="quality.png" alt="Quality Icon" height="200px">
+                    </div>
+                    <h3 class="specialty-heading">Unmatched Quality</h3>
+                    <p class="specialty-description">
+                        Good quality pastries, rich coffees, authentic espresso, and delightful savory bites.
+                    </p>
+                </div>
+
+                <div class="specialty-item">
+                    <div class="specialty-icon-container">
+                        <img src="foodfresh.jpg" alt="Fresh Icon" height="150px">
+                    </div>
+                    <h3 class="specialty-heading">Daily Freshness</h3>
+                    <p class="specialty-description">
+                        Everything baked daily on-site. We use local, seasonal ingredients for peak flavor.
+                    </p>
+                </div>
+
+                <div class="specialty-item">
+                    <div class="specialty-icon-container">
+                        <img src="cozy.png" height="150px" alt="Lounge Icon">
+                    </div>
+                    <h3 class="specialty-heading">Cozy Atmosphere</h3>
+                    <p class="specialty-description">
+                        The perfect spot for work, a casual meeting, or simply unwinding with a good book.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Byter's Cafe. All rights reserved.</p>
+    </footer>
+    <style>
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f8f7f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+   
+
+}
+
+.main-header h1 {
+    font-size: 3em;
+    color: #4a2e1f;
+    margin-bottom: 10px;
+    font-weight: 700;
+    animation: fadeInSlideDown 1s ease-out; 
+}
+
+.separator-line {
+    width: 60px;
+    height: 3px;
+    background-color: #7b5e57;
+    margin: 15px auto 25px auto;
+    border-radius: 5px;
+    animation: expandLine 1s ease-out 0.8s forwards; 
+    width: 0; 
+    opacity: 0;
+}
+
+#cafe-nav {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link, .auth-link, .cta-button {
+    
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px; 
+    text-decoration: none;
+    color: #5d4037;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: #a68b75;
+    transform: translateY(-2px); 
+}
+
+.cta-button {
+    background-color: #7b5e57;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #5d4037;
+    transform: scale(1.05); 
+}
+
+
+.dropdown-content {
+    
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    min-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.specialty-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards; 
+}
+
+.specialty-item:nth-child(1) {
+    animation-delay: 1.2s; 
+}
+
+.specialty-item:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+.specialty-item:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+
+.specialty-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+}
+
+
+.specialty-icon-container {
+   
+    transition: transform 0.3s ease;
+}
+
+.specialty-item:hover .specialty-icon-container {
+    transform: scale(1.1); 
+}
+
+
+footer {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 2s; 
+}
+    </style>
+    </body>
+</html>
